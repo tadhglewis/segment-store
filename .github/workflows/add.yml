@@ -17,4 +17,4 @@ jobs:
       - name: Install node modules
         run: yarn install
       - name: Run transform
-        run: yarn start
+        run: TT_TRANSFORM=${{ TT_TRANSFORM }} yarn start
