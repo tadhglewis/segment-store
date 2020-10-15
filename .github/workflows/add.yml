@@ -2,7 +2,7 @@ name: CI
 
 on:
   issues:
-    types: [opened]
+    types: [labeled]
 jobs:
   build:
     runs-on: ubuntu-latest
