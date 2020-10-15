@@ -12,8 +12,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      env:
-        TT_TRANSFORM: ${{ github.event.issue.body }}
+        env:
+          TT_TRANSFORM: ${{ github.event.issue.body }}
       - name: Install node modules
         run: yarn install
       - name: Run transform
