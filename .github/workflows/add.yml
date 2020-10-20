@@ -39,4 +39,4 @@ jobs:
       - name: Install node modules
         run: yarn install
       - name: Run transform
-      - run: TT_TRANSFORM=${{ github.event.issue.body }} yarn start
+        run: TT_TRANSFORM=${{ github.event.issue.body }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} yarn start
