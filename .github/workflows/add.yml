@@ -17,4 +17,6 @@ jobs:
       - name: Install node modules
         run: yarn install
       - name: Run transform
-        run: TT_TRANSFORM=$TT_TRANSFORM yarn start
+      - run: TT_TRANSFORM=$TT_TRANSFORM yarn start
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
