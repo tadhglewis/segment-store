@@ -1,4 +1,5 @@
 const store = require("./store.json");
+const { Octokit } = require("@octokit/action");
 
 const schema = {
   name: "",
@@ -12,9 +13,9 @@ const main = (ttTransform) => {
 
   const result = {};
 
-  result.data = data.split("\n");
+  result.data = data.trim().split("\n");
   result.data = result.data.reduce((result, row) => {
-    result[row.split(":")[0].toLowerCase().replace(" ", "")] = row
+    result[row.split(":")[0].trim().toLowerCase().replace(" ", "")] = row
       .split(":")[1]
       .trim();
     return result;
