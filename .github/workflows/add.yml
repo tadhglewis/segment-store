@@ -12,11 +12,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         env:
           TT_TRANSFORM: ${{ github.event.issue.body }}
       - name: Install node modules
         run: yarn install
       - name: Run transform
       - run: TT_TRANSFORM=$TT_TRANSFORM yarn start
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
